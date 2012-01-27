@@ -1,0 +1,30 @@
+<div id="sidebar">
+  <a href="/documents">Back to bookshelf</a>
+  <h1><%= @filename %></h1>
+
+  <h2>Pages</h2>
+  <ul class="pages">
+  <% @doc.n_pages.times do |index| %>
+  <li<% if @page_num == index + 1 %> class="current"<% end %>><a href="?p=<%= index + 1 %>"><%= index + 1 %></a></li>
+  <% end %>
+  </ul>
+
+  <h2>TOC</h2>
+
+  <ul class="toc">
+  <% @actions.each do |action, indent| %>
+    <li style="padding-left: <%= indent * 20 %>px;"><a href="?p=<%= action.dest.page_num %>"><%= action.title %> (<%= action.dest.page_num %>)</a></li>
+  <% end %>
+  </ul>
+
+</div>
+
+<div id="pageview">
+  <div class="page" style="width:<%= @page_width %>px;height:<%= @page_height %>px;background: url(/pages/<%= @page_hash %>.png) left top no-repeat">
+    <% @text_blocks.each do |text| %>
+      <div class="text" style="left:<%= text[:x] %>px; top:<%= text[:y] %>px; width:<%= text[:width] %>px; height:<%= text[:height] %>px"><span><%= text[:text] %></span></div>
+    <% end %>
+  </div>
+
+</div>
+

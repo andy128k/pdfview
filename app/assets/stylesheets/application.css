@@ -11,3 +11,56 @@
  *= require_self
  *= require_tree .
 */
+
+html,body{margin:0;padding:0}
+
+#sidebar {
+  padding: 10px;
+  float: left;
+  width: 400px;
+  background: #ddd;
+}
+
+.pages {
+  margin: 0;
+  padding: 0;
+}
+.pages li {
+  display: inline;
+}
+.pages li.current {
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.toc {
+  margin: 0;
+  padding: 0;
+  list-style: none outside none;
+}
+.toc li {
+  margin: 10px 0;
+}
+
+#pageview {
+  margin-left: 420px;
+  padding: 10px;
+}
+
+#pageview div.page {
+  position: relative;
+}
+
+#pageview div.text {
+  position: absolute;
+  color: white;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  color: rgba(1,1,1,0);
+}
+
+#pageview div.text ::selection {color: white;background: #CCF}
+#pageview div.text ::-moz-selection {color: white;background: #CCF}
+#pageview div.text ::-webkit-selection {color: white;background: #CCF}
+

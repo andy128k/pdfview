@@ -1,0 +1,10 @@
+<h1>Bookshelf</h1>
+
+<p><em>Hint: Put your books into /public/docs directory.</em></p>
+
+<ol>
+<% @documents.each do |doc| %>
+  <li><a href="/documents/<%= doc %>"><%= doc %></a></li>
+<% end %>
+</ol>
+

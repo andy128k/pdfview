@@ -1,4 +1,9 @@
 Pdfview::Application.routes.draw do
+  resources :documents, :only => :index
+  match "/documents/*filename" => "documents#show", :format => false
+
+  root :to => 'documents#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
