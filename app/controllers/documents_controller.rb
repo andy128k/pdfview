@@ -41,7 +41,7 @@ class DocumentsController < ApplicationController
     if layout
       layout.each do |rect|
         @text_blocks << {
-          :text => @page.get_text(rect),
+          :text => @page.get_text(rect).chomp[-1],
           :x => rect.x1 - crop_box.x1,
           :y => rect.y1 - crop_box.y1,
           :width => rect.x2 - rect.x1,
